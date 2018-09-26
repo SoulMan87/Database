@@ -1,0 +1,24 @@
+CREATE DATABASE cineUraba
+*************************
+CREATE TABLE clientes(
+IdCliente int PRIMARY KEY AUTO_INCREMENT,
+TipoDocumento varchar(20) not null,
+Nombre varchar(20) not null,
+FechaNacimiento date not null,
+PuntosAcumulados int not null,
+Estado boolean 
+)
+ENGINE INNODB
+************************
+CREATE TABLE ingreso(
+IdIngreso int PRIMARY KEY AUTO_INCREMENT,
+IdCliente int not null,
+TipoSala varchar(20) not null,
+ValSalaCine int not null,
+fecha date not null,
+Valor int not null,
+puntos int not null
+FOREIGN KEY (IdCliente)REFERENCES clientes (Idclientes)
+)
+ENGINE INNODB
+************************
